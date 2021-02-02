@@ -16,6 +16,7 @@ fn main() {
     };
     assert!(hm1.len() == hm2.len());
     assert!(hm2.len() == hm3.len());
+    eprintln!();
 
     {
         let _t = timeit("lookup std::collections::HasSet");
@@ -27,7 +28,7 @@ fn main() {
     }
     {
         let _t = timeit("lookup ahash::AHashSet");
-        assert!(numbers(n).all(|it| hm2.contains(&it)))
+        assert!(numbers(n).all(|it| hm3.contains(&it)))
     }
 }
 
@@ -39,7 +40,7 @@ fn timeit(label: &'static str) -> impl Drop {
     struct Timer(&'static str, Instant);
     impl Drop for Timer {
         fn drop(&mut self) {
-            eprintln!("{}: {:.2?}", self.0, self.1.elapsed());
+            eprintln!("{:<33} {:.2?}", self.0, self.1.elapsed());
         }
     }
     Timer(label, Instant::now())
