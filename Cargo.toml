@@ -1,0 +1,8 @@
+[package]
+name = "hashbench"
+version = "0.1.0"
+authors = ["Aleksey Kladov <aleksey.kladov@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rustc-hash = "1.0"
