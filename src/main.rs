@@ -10,7 +10,12 @@ fn main() {
         let _t = timeit("build rustc_hash::FxHashSet");
         numbers(n).collect::<rustc_hash::FxHashSet<_>>()
     };
+    let hm3 = {
+        let _t = timeit("build ahash::HashSet");
+        numbers(n).collect::<ahash::AHashSet<_>>()
+    };
     assert!(hm1.len() == hm2.len());
+    assert!(hm2.len() == hm3.len());
 
     {
         let _t = timeit("lookup std::collections::HasSet");
@@ -18,6 +23,10 @@ fn main() {
     }
     {
         let _t = timeit("lookup rustc_hash::FxHashSet");
+        assert!(numbers(n).all(|it| hm2.contains(&it)))
+    }
+    {
+        let _t = timeit("lookup ahash::AHashSet");
         assert!(numbers(n).all(|it| hm2.contains(&it)))
     }
 }
