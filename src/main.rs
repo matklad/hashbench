@@ -1,39 +1,44 @@
 use std::time::Instant;
 
+const N: u32 = 50_000_000;
+
+#[inline(never)]
+fn build() -> rustc_hash::FxHashSet<u32> {
+    numbers(N).collect()
+}
+
+#[inline(never)]
+fn lookup(hm: &rustc_hash::FxHashSet<u32>) {
+    assert!(numbers(N).all(|it| hm.contains(&it)))
+}
+
 fn main() {
-    let n = 50_000_000;
-    let hm1 = {
-        let _t = timeit("build std::collections::HashSet");
-        numbers(n).collect::<std::collections::HashSet<_>>()
-    };
-    let hm2 = {
+    let hm = {
         let _t = timeit("build rustc_hash::FxHashSet");
-        numbers(n).collect::<rustc_hash::FxHashSet<_>>()
+        build()
     };
-    let hm3 = {
-        let _t = timeit("build ahash::HashSet");
-        numbers(n).collect::<ahash::AHashSet<_>>()
-    };
-    assert!(hm1.len() == hm2.len());
-    assert!(hm2.len() == hm3.len());
-    eprintln!();
 
     {
-        let _t = timeit("lookup std::collections::HasSet");
-        assert!(numbers(n).all(|it| hm1.contains(&it)))
-    }
-    {
         let _t = timeit("lookup rustc_hash::FxHashSet");
-        assert!(numbers(n).all(|it| hm2.contains(&it)))
-    }
-    {
-        let _t = timeit("lookup ahash::AHashSet");
-        assert!(numbers(n).all(|it| hm3.contains(&it)))
+        lookup(&hm)
     }
 }
 
 fn numbers(n: u32) -> impl Iterator<Item = u32> {
-    (0..n).map(|i| i.wrapping_mul(i) ^ i)
+//  On  my machine (5900X) this runs as
+// build rustc_hash::FxHashSet       1.90s
+// lookup rustc_hash::FxHashSet      5.33s
+
+// Uncommenting any of the to cases gives
+// build rustc_hash::FxHashSet       1.76s
+// lookup rustc_hash::FxHashSet      1.45s
+    (0..n)
+        // uncomment rev to make lookup fast
+        // .rev()
+        .map(|i| i)
+        // uncomment rev to make lookup fast
+        // .collect::<Vec<u32>>()
+        // .into_iter()
 }
 
 fn timeit(label: &'static str) -> impl Drop {

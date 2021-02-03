@@ -1,0 +1,1206 @@
+desc: I1 cache:         32768 B, 64 B, 8-way associative
+desc: D1 cache:         32768 B, 64 B, 8-way associative
+desc: LL cache:         67108864 B, 64 B, direct-mapped
+cmd: ./target/release/hashbench
+events: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+fl=/build/glibc-2.32/csu/../sysdeps/x86_64/start.S
+fn=_start
+63 1 1 1 0 0 0 0 0 0
+79 1 0 0 0 0 0 0 0 0
+85 1 0 0 1 0 0 0 0 0
+88 1 0 0 0 0 0 0 0 0
+90 1 0 0 0 0 0 0 0 0
+93 1 0 0 0 0 0 1 0 0
+97 1 0 0 0 0 0 1 0 0
+101 1 0 0 0 0 0 0 0 0
+102 1 0 0 0 0 0 0 0 0
+104 1 1 1 0 0 0 0 0 0
+120 1 0 0 1 1 0 1 0 0
+fl=/cargo/registry/src/github.com-1ecc6299db9ec823/hashbrown-0.9.0/src/raw/bitmask.rs
+fn=hashbench::build
+0 250000000 0 0 0 0 0 0 0 0
+51 50000000 0 0 0 0 0 0 0 0
+57 200000000 1 1 0 0 0 0 0 0
+118 50000000 0 0 0 0 0 0 0 0
+fn=hashbench::lookup
+46 100000000 0 0 0 0 0 0 0 0
+57 150000000 1 1 0 0 0 0 0 0
+118 50000000 0 0 0 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+25 1 0 0 0 0 0 0 0 0
+57 1 0 0 0 0 0 0 0 0
+fl=/cargo/registry/src/github.com-1ecc6299db9ec823/hashbrown-0.9.0/src/raw/mod.rs
+fn=hashbench::build
+0 250000001 1 1 50000000 0 0 0 0 0
+102 50000000 0 0 0 0 0 0 0 0
+134 100000000 0 0 0 0 0 0 0 0
+165 50000000 0 0 0 0 0 0 0 0
+166 150000000 0 0 0 0 0 0 0 0
+167 50000000 0 0 0 0 0 0 0 0
+565 1 0 0 1 0 0 0 0 0
+566 100000000 0 0 0 0 0 0 0 0
+593 50000000 0 0 0 0 0 0 0 0
+595 50000000 0 0 0 0 0 50000000 0 0
+596 50000000 0 0 0 0 0 50000000 15 15
+608 50000000 0 0 0 0 0 0 0 0
+609 100000000 0 0 0 0 0 0 0 0
+620 100000000 0 0 50000000 0 0 0 0 0
+707 2 0 0 0 0 0 1 0 0
+925 150000000 0 0 50000000 0 0 0 0 0
+931 200000000 0 0 50000000 0 0 0 0 0
+934 50000000 0 0 50000000 0 0 0 0 0
+994 200000000 0 0 0 0 0 0 0 0
+1843 2 0 0 1 0 0 0 0 0
+1869 50000000 0 0 0 0 0 0 0 0
+fn=hashbench::lookup
+0 150000001 0 0 0 0 0 0 0 0
+134 100000000 0 0 0 0 0 0 0 0
+166 50000000 0 0 0 0 0 0 0 0
+167 50000000 0 0 0 0 0 0 0 0
+566 50000000 0 0 0 0 0 0 0 0
+994 300000000 0 0 0 0 0 0 0 0
+996 250000000 1 1 50000000 49999996 36490880 0 0 0
+1865 100000000 0 0 0 0 0 0 0 0
+fn=hashbench::main
+1022 2 0 0 0 0 0 0 0 0
+1035 1 0 0 0 0 0 0 0 0
+1321 1 1 1 0 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::fallible_with_capacity
+0 4 2 2 0 0 0 1 0 0
+184 2 0 0 0 0 0 0 0 0
+195 7 0 0 0 0 0 0 0 0
+207 5 0 0 0 0 0 0 0 0
+228 1 0 0 0 0 0 0 0 0
+238 1 0 0 0 0 0 0 0 0
+412 2 1 1 0 0 0 0 0 0
+418 1 0 0 0 0 0 0 0 0
+427 8 1 1 0 0 0 7 0 0
+431 2 0 0 0 0 0 0 0 0
+443 4 1 1 0 0 0 4 1 1
+446 8 0 0 7 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+0 4 2 2 1 0 0 0 0 0
+207 7 0 0 0 0 0 0 0 0
+734 8 2 2 0 0 0 6 0 0
+742 1 0 0 0 0 0 0 0 0
+745 1 0 0 1 0 0 0 0 0
+746 4 0 0 0 0 0 0 0 0
+755 1 1 1 0 0 0 0 0 0
+760 8 0 0 7 1 1 0 0 0
+873 3 0 0 1 0 0 1 0 0
+874 2 0 0 1 1 1 0 0 0
+883 6 0 0 0 0 0 0 0 0
+884 1 0 0 0 0 0 0 0 0
+909 1 1 1 0 0 0 1 1 1
+1022 1 0 0 1 0 0 0 0 0
+1035 2 0 0 0 0 0 0 0 0
+1044 1 0 0 1 0 0 0 0 0
+1472 1 0 0 0 0 0 0 0 0
+1477 2 0 0 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs
+fn=hashbrown::raw::RawTable<T>::fallible_with_capacity
+86 1 0 0 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/simd.rs
+fn=hashbench::build
+15 200000000 0 0 0 0 0 0 0 0
+fn=hashbench::lookup
+15 200000000 0 0 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/x86/sse2.rs
+fn=hashbench::build
+1455 150000000 1 1 50000000 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+1246 1 0 0 1 1 1 0 0 0
+1455 1 0 0 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/alloc/layout.rs
+fn=hashbench::main
+248 1 0 0 0 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::fallible_with_capacity
+248 1 0 0 0 0 0 0 0 0
+344 1 0 0 0 0 0 0 0 0
+345 3 1 1 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/cmp.rs
+fn=hashbench::lookup
+1170 50000000 0 0 0 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+0 2 0 0 0 0 0 0 0 0
+1134 1 0 0 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/mod.rs
+fn=<&T as core::fmt::Display>::fmt
+1996 6 0 0 4 0 0 0 0 0
+fn=hashbench::main
+331 16 1 1 0 0 0 12 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/intrinsics.rs
+fn=hashbench::build
+1866 100000000 0 0 100000000 50000000 33044215 0 0 0
+fn=hashbench::lookup
+1866 50000000 1 1 50000000 50000000 33271244 0 0 0
+fn=hashbrown::raw::RawTable<T>::fallible_with_capacity
+2028 4 0 0 1 0 0 1 0 0
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+1866 3 1 1 1 0 0 2 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/range.rs
+fn=hashbench::build
+505 50000001 0 0 0 0 0 0 0 0
+fn=hashbench::lookup
+0 4 0 0 0 0 0 0 0 0
+505 50000001 0 0 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs
+fn=hashbench::build
+0 100000000 1 1 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/uint_macros.rs
+fn=hashbench::build
+924 50000000 0 0 0 0 0 0 0 0
+948 150000000 2 2 0 0 0 0 0 0
+fn=hashbench::lookup
+475 50000000 0 0 0 0 0 0 0 0
+948 100000000 0 0 0 0 0 0 0 0
+fn=hashbench::main
+924 1 0 0 0 0 0 0 0 0
+1269 2 0 0 0 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::fallible_with_capacity
+0 1 0 0 0 0 0 0 0 0
+924 2 0 0 0 0 0 0 0 0
+1213 3 0 0 0 0 0 0 0 0
+1269 4 0 0 0 0 0 0 0 0
+1655 5 0 0 0 0 0 0 0 0
+1686 4 1 1 0 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+1213 1 0 0 1 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs
+fn=std::sys_common::backtrace::__rust_begin_short_backtrace
+0 1 0 0 0 0 0 0 0 0
+227 1 0 0 0 0 0 1 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/const_ptr.rs
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+225 2 1 1 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/mod.rs
+fn=hashbench::build
+889 50000000 0 0 0 0 0 50000000 49999996 36490880
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ptr/mut_ptr.rs
+fn=hashbench::build
+232 100000000 1 1 0 0 0 0 0 0
+fn=hashbench::main
+232 1 0 0 0 0 0 0 0 0
+fn=hashbrown::raw::RawTable<T>::fallible_with_capacity
+232 1 0 0 0 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs
+fn=hashbrown::raw::RawTable<T>::reserve_rehash
+1503 1 0 0 1 0 0 0 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/collections/hash/set.rs
+fn=hashbench::build
+0 3 1 1 0 0 0 1 0 0
+335 5 0 0 0 0 0 3 0 0
+fl=/home/matklad/.rustup/toolchains/beta-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys_common/backtrace.rs
+fn=std::sys_common::backtrace::__rust_begin_short_backtrace
+121 1 0 0 0 0 0 1 0 0
+131 2 0 0 2 0 0 0 0 0
+fl=/home/matklad/projects/hashbench/src/main.rs
+fn=hashbench::build
+6 8 1 1 0 0 0 6 0 0
+8 8 1 1 7 2 2 0 0 0
+fn=hashbench::lookup
+11 3 1 1 0 0 0 3 0 0
+13 4 0 0 3 2 2 0 0 0
+fn=hashbench::main
+15 7 1 1 0 0 0 6 0 0
+18 1 0 0 0 0 0 1 0 0
+23 5 1 1 2 0 0 1 0 0
+25 8 0 0 7 1 1 0 0 0
+35 25 2 2 0 0 0 16 0 0
+38 9 0 0 0 0 0 6 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/cmp.rs
+fn=core::fmt::Formatter::pad
+1254 15 0 0 0 0 0 0 0 0
+fn=core::fmt::write
+0 4 0 0 0 0 0 0 0 0
+1068 4 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/fmt/mod.rs
+fn=<&T as core::fmt::Display>::fmt
+1996 6 1 1 4 0 0 0 0 0
+2061 8 0 0 0 0 0 0 0 0
+fn=<core::time::Duration as core::fmt::Debug>::fmt
+1498 10 1 1 6 0 0 0 0 0
+1694 2 1 1 2 0 0 0 0 0
+fn=<core::time::Duration as core::fmt::Debug>::fmt::fmt_decimal
+0 6 1 1 0 0 0 2 0 0
+1521 24 1 1 4 0 0 12 0 0
+fn=core::fmt::Formatter::pad
+0 14 1 1 4 0 0 0 0 0
+1151 4 0 0 0 0 0 0 0 0
+1152 55 0 0 11 2 2 11 0 0
+1318 40 1 1 0 0 0 28 0 0
+1320 8 1 1 4 0 0 0 0 0
+1325 8 0 0 0 0 0 0 0 0
+1348 12 0 0 4 0 0 0 0 0
+1353 2 0 0 0 0 0 0 0 0
+1354 16 1 1 6 0 0 2 0 0
+1355 4 0 0 4 0 0 0 0 0
+1358 18 0 0 14 0 0 0 0 0
+1368 6 0 0 2 0 0 0 0 0
+1369 2 0 0 0 0 0 0 0 0
+1374 8 0 0 2 2 2 0 0 0
+1379 4 1 1 0 0 0 0 0 0
+1383 2 0 0 2 0 0 0 0 0
+fn=core::fmt::Formatter::pad_integral
+0 18 3 3 12 0 0 0 0 0
+1224 24 1 1 0 0 0 12 0 0
+1228 4 0 0 0 0 0 0 0 0
+1231 8 0 0 0 0 0 0 0 0
+1236 2 0 0 0 0 0 0 0 0
+1256 4 0 0 2 0 0 0 0 0
+1257 16 1 1 0 0 0 2 0 0
+1258 12 0 0 6 0 0 0 0 0
+1694 8 1 1 2 0 0 0 0 0
+1749 2 0 0 0 0 0 0 0 0
+fn=core::fmt::Formatter::pad_integral::write_prefix
+0 2 1 1 0 0 0 0 0 0
+1245 12 1 1 0 0 0 6 0 0
+1246 4 0 0 0 0 0 0 0 0
+1249 4 0 0 0 0 0 0 0 0
+1250 8 0 0 8 0 0 0 0 0
+fn=core::fmt::write
+0 34 2 2 8 0 0 0 0 0
+286 8 0 0 2 0 0 0 0 0
+289 4 0 0 4 0 0 0 0 0
+1061 40 1 1 0 0 0 24 2 2
+1062 24 1 1 0 0 0 24 3 3
+1074 12 0 0 4 0 0 0 0 0
+1082 4 0 0 4 0 0 0 0 0
+1085 8 0 0 8 0 0 0 0 0
+1086 72 1 1 36 6 6 8 0 0
+1089 16 0 0 0 0 0 0 0 0
+1096 4 0 0 0 0 0 0 0 0
+1097 18 0 0 12 0 0 2 0 0
+1101 32 0 0 28 0 0 0 0 0
+1104 16 0 0 8 8 8 8 0 0
+1105 16 0 0 8 0 0 8 0 0
+1106 16 1 1 8 0 0 8 0 0
+1110 32 1 1 16 0 0 16 0 0
+1111 32 0 0 16 4 4 16 0 0
+1118 8 0 0 8 0 0 0 0 0
+1121 24 0 0 16 0 0 8 0 0
+1126 56 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/fmt/num.rs
+fn=core::fmt::num::imp::<impl core::fmt::Display for u64>::fmt
+0 2 1 1 0 0 0 0 0 0
+45 4 0 0 2 0 0 0 0 0
+230 4 0 0 0 0 0 0 0 0
+249 6 0 0 0 0 0 0 0 0
+257 4 0 0 0 0 0 0 0 0
+262 2 0 0 0 0 0 0 0 0
+271 2 0 0 0 0 0 0 0 0
+273 10 0 0 0 0 0 2 0 0
+279 4 1 1 0 0 0 0 0 0
+288 4 0 0 2 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/intrinsics.rs
+fn=core::fmt::num::imp::<impl core::fmt::Display for u64>::fmt
+1866 4 1 1 2 2 2 2 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/iter/adapters/zip.rs
+fn=core::fmt::write
+0 4 0 0 0 0 0 4 0 0
+193 36 1 1 0 0 0 4 1 1
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/iter/range.rs
+fn=core::fmt::Formatter::pad
+505 15 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/option.rs
+fn=<core::time::Duration as core::fmt::Debug>::fmt::fmt_decimal
+0 18 0 0 0 0 0 0 0 0
+408 6 0 0 0 0 0 0 0 0
+453 6 0 0 0 0 0 0 0 0
+fn=core::fmt::Formatter::pad
+197 4 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/ptr/const_ptr.rs
+fn=core::fmt::num::imp::<impl core::fmt::Display for u64>::fmt
+225 2 0 0 0 0 0 0 0 0
+fn=core::fmt::write
+225 8 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/ptr/mut_ptr.rs
+fn=core::fmt::Formatter::pad
+232 10 0 0 0 0 0 0 0 0
+fn=core::fmt::num::imp::<impl core::fmt::Display for u64>::fmt
+232 6 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/slice/index.rs
+fn=<core::time::Duration as core::fmt::Debug>::fmt::fmt_decimal
+237 4 1 1 0 0 0 0 0 0
+fn=core::fmt::write
+155 4 1 1 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/slice/iter/macros.rs
+fn=core::fmt::Formatter::pad
+0 34 0 0 18 0 0 0 0 0
+146 148 6 6 12 6 6 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/str/iter.rs
+fn=core::fmt::Formatter::pad
+0 8 0 0 0 0 0 0 0 0
+52 114 4 4 62 1 1 0 0 0
+53 360 4 4 2 0 0 0 0 0
+55 10 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/str/validations.rs
+fn=core::fmt::Formatter::pad
+25 96 2 2 4 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/core/src/time.rs
+fn=<core::time::Duration as core::fmt::Debug>::fmt
+0 10 0 0 6 0 0 0 0 0
+973 10 1 1 0 0 0 4 0 0
+1065 2 0 0 0 0 0 0 0 0
+1069 6 1 1 2 0 0 0 0 0
+1070 10 0 0 0 0 0 2 0 0
+fn=<core::time::Duration as core::fmt::Debug>::fmt::fmt_decimal
+0 10 2 2 4 0 0 0 0 0
+984 10 2 2 0 0 0 6 0 0
+994 4 0 0 0 0 0 4 2 2
+1001 24 1 1 0 0 0 0 0 0
+1003 24 0 0 0 0 0 4 0 0
+1005 12 0 0 0 0 0 0 0 0
+1006 12 0 0 0 0 0 0 0 0
+1007 4 0 0 0 0 0 0 0 0
+1016 2 0 0 0 0 0 0 0 0
+1051 4 0 0 0 0 0 0 0 0
+1056 4 0 0 0 0 0 4 0 0
+1059 4 0 0 0 0 0 2 0 0
+1060 22 1 1 0 0 0 12 0 0
+1062 8 0 0 6 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/ffi/c_str.rs
+fn=alloc::sync::Arc<T>::drop_slow
+771 1 0 0 0 0 0 1 0 0
+fn=std::ffi::c_str::CString::from_vec_unchecked
+429 5 1 1 0 0 0 3 0 0
+433 6 2 2 4 0 0 0 0 0
+fn=std::thread::Thread::new
+406 1 0 0 0 0 0 0 0 0
+407 8 1 1 0 0 0 4 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/io/mod.rs
+fn=<std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str
+0 58 0 0 0 0 0 0 0 0
+1505 203 1 1 0 0 0 174 3 3
+1506 29 0 0 29 0 0 0 0 0
+1507 58 0 0 0 0 0 0 0 0
+1513 232 1 1 203 0 0 0 0 0
+fn=std::io::Write::write_all
+0 204 1 1 50 2 2 0 0 0
+1381 232 1 1 0 0 0 203 8 8
+1382 54 1 1 0 0 0 0 0 0
+1393 377 2 2 203 0 0 0 0 0
+fn=std::io::stdio::_eprint
+1516 4 0 0 0 0 0 4 0 0
+1517 22 1 1 6 0 0 8 0 0
+1518 6 1 1 0 0 0 2 0 0
+1528 4 0 0 4 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/io/stdio.rs
+fn=<std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str
+0 58 0 0 0 0 0 0 0 0
+178 87 0 0 0 0 0 29 0 0
+192 58 0 0 0 0 0 0 0 0
+193 232 1 1 0 0 0 145 0 0
+195 58 0 0 58 0 0 0 0 0
+879 29 0 0 29 0 0 0 0 0
+fn=std::io::stdio::_eprint
+0 1 1 1 0 0 0 0 0 0
+859 4 0 0 0 0 0 2 1 1
+860 2 0 0 2 0 0 0 0 0
+939 4 0 0 0 0 0 0 0 0
+962 10 1 1 0 0 0 8 0 0
+963 18 1 1 6 0 0 10 0 0
+964 12 0 0 10 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/lazy.rs
+fn=std::io::stdio::_eprint
+329 2 0 0 0 0 0 0 0 0
+335 2 0 0 0 0 0 1 1 1
+fn=std::sync::once::Once::call_once_force::{{closure}}
+343 1 0 0 1 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sync/once.rs
+fn=<std::sync::once::WaiterQueue as core::ops::drop::Drop>::drop
+491 8 1 1 0 0 0 6 0 0
+494 4 0 0 4 0 0 0 0 0
+497 10 0 0 0 0 0 2 0 0
+507 2 0 0 0 0 0 0 0 0
+517 10 1 1 8 0 0 0 0 0
+fn=std::io::stdio::_eprint
+316 1 0 0 0 0 0 0 0 0
+320 2 1 1 0 0 0 1 0 0
+321 7 0 0 0 0 0 2 1 1
+372 3 0 0 0 0 0 0 0 0
+fn=std::sync::once::Once::call_inner
+0 6 1 1 1 1 1 0 0 0
+387 20 1 1 0 0 0 16 1 1
+389 4 0 0 0 0 0 0 0 0
+391 4 0 0 0 0 0 0 0 0
+404 4 1 1 0 0 0 0 0 0
+410 4 1 1 0 0 0 4 0 0
+416 10 0 0 4 0 0 4 0 0
+417 2 0 0 0 0 0 0 0 0
+420 2 0 0 2 2 2 2 0 0
+421 6 1 1 2 0 0 2 0 0
+433 16 0 0 14 0 0 0 0 0
+fn=std::sync::once::Once::call_once::{{closure}}
+261 16 3 3 8 0 0 6 0 0
+fn=std::sync::once::Once::call_once_force::{{closure}}
+321 2 1 1 1 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/alloc.rs
+fn=<std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str
+0 58 1 1 0 0 0 0 0 0
+fn=alloc::sync::Arc<T>::drop_slow
+42 3 0 0 3 0 0 1 0 0
+fn=hashbench::main
+42 2 0 0 1 1 1 1 0 0
+fn=hashbrown::raw::RawTable<T>::fallible_with_capacity
+13 1 0 0 0 0 0 0 0 0
+14 3 0 0 1 0 0 1 0 0
+fn=std::thread::Thread::new
+14 2 0 0 1 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/args.rs
+fn=std::sys::unix::args::imp::ARGV_INIT_ARRAY::init_wrapper
+117 1 1 1 0 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/fd.rs
+fn=std::io::Write::write_all
+146 75 0 0 0 0 0 25 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/memchr.rs
+fn=std::thread::Thread::new
+6 4 0 0 1 1 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/mod.rs
+fn=hashbench::main
+201 2 0 0 0 0 0 0 0 0
+209 2 1 1 0 0 0 0 0 0
+fn=std::io::Write::write_all
+209 100 0 0 0 0 0 0 0 0
+fn=std::sys::unix::mutex::ReentrantMutex::init
+226 3 0 0 0 0 0 0 0 0
+fn=std::time::Instant::elapsed
+201 2 0 0 0 0 0 0 0 0
+209 2 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/mutex.rs
+fn=std::io::stdio::_eprint
+115 6 1 1 2 2 2 2 1 1
+125 2 0 0 2 0 0 2 0 0
+fn=std::sync::once::Once::call_once::{{closure}}
+63 23 0 0 1 0 0 11 0 0
+68 22 1 1 11 0 0 11 0 0
+fn=std::sys::unix::args::imp::ARGV_INIT_ARRAY::init_wrapper
+63 3 0 0 1 0 0 1 0 0
+68 3 0 0 2 0 0 0 0 0
+fn=std::sys::unix::mutex::ReentrantMutex::init
+105 5 1 1 0 0 0 2 1 1
+107 2 0 0 1 1 1 1 0 0
+108 1 1 1 0 0 0 1 0 0
+109 3 0 0 1 0 0 1 0 0
+111 2 0 0 1 0 0 1 0 0
+112 4 0 0 3 0 0 0 0 0
+140 1 0 0 1 0 0 1 0 0
+fn=std::thread::Thread::new
+63 3 0 0 1 1 0 1 0 0
+68 2 0 0 1 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/os.rs
+fn=std::sync::once::Once::call_once::{{closure}}
+574 5 1 1 1 1 1 2 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/stack_overflow.rs
+fn=std::sync::once::Once::call_once::{{closure}}
+0 5 0 0 1 0 0 0 0 0
+196 1 0 0 0 0 0 0 0 0
+197 4 0 0 0 0 0 3 0 0
+206 2 0 0 1 1 1 1 0 0
+209 3 0 0 1 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/thread_local_dtor.rs
+fn=std::thread::local::fast::Key<T>::try_initialize
+30 2 1 1 1 0 0 0 0 0
+36 6 2 2 2 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys/unix/time.rs
+fn=hashbench::main
+370 6 0 0 0 0 0 2 0 0
+371 6 1 1 2 0 0 2 0 0
+373 2 0 0 2 0 0 0 0 0
+fn=std::sys::unix::time::Timespec::sub_timespec
+21 10 1 1 0 0 0 4 0 0
+22 8 0 0 6 0 0 0 0 0
+36 10 0 0 0 0 0 0 0 0
+45 6 0 0 0 0 0 6 0 0
+52 8 0 0 6 0 0 0 0 0
+fn=std::time::Instant::elapsed
+310 2 0 0 0 0 0 2 0 0
+370 6 0 0 0 0 0 2 0 0
+371 4 0 0 2 2 2 2 1 1
+373 2 0 0 2 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys_common/at_exit_imp.rs
+fn=std::sync::once::Once::call_once::{{closure}}
+48 20 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/sys_common/remutex.rs
+fn=std::sync::once::Once::call_once_force::{{closure}}
+69 2 0 0 1 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/thread/local.rs
+fn=std::thread::local::fast::Key<T>::try_initialize
+338 2 1 1 1 0 0 0 0 0
+469 2 1 1 0 0 0 1 0 0
+477 3 0 0 2 0 0 0 0 0
+483 1 0 0 1 1 0 0 0 0
+484 2 0 0 0 0 0 0 0 0
+fn=std::thread::local::fast::destroy_value
+503 1 1 1 0 0 0 0 0 0
+519 4 0 0 1 0 0 3 0 0
+521 2 0 0 1 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/thread/mod.rs
+fn=std::thread::Thread::new
+0 2 0 0 2 0 0 0 0 0
+990 1 0 0 0 0 0 1 0 0
+994 3 0 0 1 1 0 0 0 0
+999 2 1 1 0 0 0 1 0 0
+1057 4 1 1 0 0 0 3 0 0
+1059 1 0 0 1 0 0 0 0 0
+1061 2 0 0 0 0 0 2 0 0
+1063 5 0 0 4 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f//library/std/src/time.rs
+fn=std::time::Instant::elapsed
+344 6 1 1 0 0 0 2 0 0
+345 12 1 1 2 2 2 4 0 0
+346 6 0 0 4 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/alloc/src/alloc.rs
+fn=alloc::sync::Arc<T>::drop_slow
+236 2 0 0 1 0 0 0 0 0
+fn=std::thread::Thread::new
+317 2 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/alloc/src/raw_vec.rs
+fn=std::ffi::c_str::CString::from_vec_unchecked
+0 2 1 1 0 0 0 0 0 0
+240 2 0 0 0 0 0 0 0 0
+249 4 0 0 0 0 0 3 0 0
+344 2 0 0 1 0 0 0 0 0
+366 1 0 0 0 0 0 0 0 0
+375 1 0 0 0 0 0 1 0 0
+376 1 0 0 0 0 0 1 0 0
+441 5 0 0 2 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/alloc/src/rc.rs
+fn=alloc::sync::Arc<T>::drop_slow
+1742 1 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/alloc/src/sync.rs
+fn=alloc::sync::Arc<T>::drop_slow
+948 2 1 1 0 0 0 1 0 0
+951 1 0 0 1 0 0 0 0 0
+954 1 0 0 1 0 0 0 0 0
+1774 1 0 0 0 0 0 0 0 0
+1928 1 0 0 0 0 0 0 0 0
+fn=std::sync::once::Once::call_inner
+0 2 1 1 1 1 1 0 0 0
+fn=std::thread::Thread::new
+330 6 1 1 1 1 1 5 0 0
+fn=std::thread::local::fast::destroy_value
+1436 2 0 0 1 0 0 0 0 0
+1471 1 0 0 0 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/alloc/src/vec.rs
+fn=std::ffi::c_str::CString::from_vec_unchecked
+722 1 1 1 1 0 0 0 0 0
+822 3 1 1 1 0 0 0 0 0
+1051 1 1 1 1 0 0 0 0 0
+1408 2 0 0 0 0 0 0 0 0
+1414 2 0 0 0 0 0 1 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/cell.rs
+fn=<std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str
+0 29 1 1 0 0 0 0 0 0
+1469 58 0 0 29 1 1 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/char/methods.rs
+fn=core::fmt::Write::write_char
+0 11 0 0 0 0 0 0 0 0
+1559 22 0 0 0 0 0 0 0 0
+1590 22 0 0 0 0 0 11 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/cmp.rs
+fn=std::io::Write::write_all
+0 75 1 1 0 0 0 0 0 0
+fn=std::sync::once::Once::call_once::{{closure}}
+1254 40 2 2 0 0 0 0 0 0
+fn=std::sys::unix::time::Timespec::sub_timespec
+1016 2 0 0 0 0 0 0 0 0
+1269 10 1 1 2 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/fmt/mod.rs
+fn=core::fmt::Write::write_char
+158 22 1 1 0 0 0 11 0 0
+159 22 0 0 0 0 0 22 0 0
+160 22 0 0 22 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/intrinsics.rs
+fn=<std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str
+1866 58 0 0 29 0 0 29 0 0
+fn=std::sync::once::Once::call_once::{{closure}}
+1866 21 0 0 10 0 0 11 0 0
+fn=std::sync::once::Once::call_once_force::{{closure}}
+1866 2 0 0 1 0 0 1 0 0
+fn=std::thread::local::fast::Key<T>::try_initialize
+1866 8 2 2 3 1 1 3 0 0
+fn=std::thread::local::fast::destroy_value
+1866 5 1 1 2 1 1 2 1 1
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/iter/range.rs
+fn=std::sync::once::Once::call_once::{{closure}}
+654 10 0 0 0 0 0 0 0 0
+658 20 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/mem/maybe_uninit.rs
+fn=std::sync::once::Once::call_once_force::{{closure}}
+379 4 0 0 0 0 0 3 1 1
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/mem/mod.rs
+fn=std::thread::local::fast::Key<T>::try_initialize
+816 4 0 0 1 0 0 3 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/num/uint_macros.rs
+fn=std::ffi::c_str::CString::from_vec_unchecked
+1213 2 0 0 0 0 0 0 0 0
+fn=std::sys::unix::time::Timespec::sub_timespec
+1213 2 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/ops/range.rs
+fn=std::sync::once::Once::call_once::{{closure}}
+544 30 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/option.rs
+fn=std::ffi::c_str::CString::from_vec_unchecked
+534 1 0 0 0 0 0 0 0 0
+fn=std::sync::once::Once::call_once::{{closure}}
+385 2 0 0 1 0 0 0 0 0
+fn=std::sync::once::Once::call_once_force::{{closure}}
+385 2 0 0 0 0 0 0 0 0
+fn=std::thread::Thread::new
+385 2 0 0 0 0 0 0 0 0
+453 2 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/ptr/const_ptr.rs
+fn=<std::sync::once::WaiterQueue as core::ops::drop::Drop>::drop
+405 2 0 0 0 0 0 0 0 0
+fn=std::io::Write::write_all
+225 50 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/ptr/mod.rs
+fn=alloc::sync::Arc<T>::drop_slow
+179 4 0 0 2 0 0 0 0 0
+fn=std::ffi::c_str::CString::from_vec_unchecked
+889 1 0 0 0 0 0 1 0 0
+fn=std::io::stdio::_eprint
+0 4 0 0 0 0 0 0 0 0
+179 6 0 0 2 0 0 0 0 0
+fn=std::sync::once::Once::call_inner
+179 2 0 0 0 0 0 2 0 0
+fn=std::thread::local::fast::Key<T>::try_initialize
+179 3 0 0 0 0 0 0 0 0
+fn=std::thread::local::fast::destroy_value
+0 2 1 1 0 0 0 0 0 0
+179 5 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/ptr/mut_ptr.rs
+fn=std::sync::once::Once::call_once::{{closure}}
+232 1 0 0 0 0 0 0 0 0
+426 1 0 0 0 0 0 0 0 0
+fn=std::thread::Thread::new
+426 1 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/result.rs
+fn=std::ffi::c_str::CString::from_vec_unchecked
+1503 2 0 0 2 0 0 0 0 0
+fn=std::sys::unix::mutex::ReentrantMutex::init
+0 2 0 0 0 0 0 0 0 0
+972 3 0 0 0 0 0 0 0 0
+fn=std::time::Instant::elapsed
+388 8 0 0 6 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/slice/index.rs
+fn=std::io::Write::write_all
+321 75 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/slice/mod.rs
+fn=std::io::Write::write_all
+110 54 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/sync/atomic.rs
+fn=<std::sync::once::WaiterQueue as core::ops::drop::Drop>::drop
+2486 2 1 1 4 0 0 0 0 0
+fn=alloc::sync::Arc<T>::drop_slow
+2517 1 1 1 2 0 0 0 0 0
+fn=std::io::stdio::_eprint
+2469 3 0 0 3 2 2 0 0 0
+fn=std::sync::once::Once::call_inner
+2469 2 0 0 2 0 0 0 0 0
+2537 8 1 1 2 0 0 0 0 0
+fn=std::sync::once::Once::call_once::{{closure}}
+2470 1 0 0 1 0 0 0 0 0
+fn=std::thread::local::fast::destroy_value
+2517 1 0 0 2 1 1 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/time.rs
+fn=std::sys::unix::time::Timespec::sub_timespec
+163 8 1 1 0 0 0 0 0 0
+164 2 0 0 0 0 0 0 0 0
+167 8 0 0 0 0 0 0 0 0
+fl=/rustc/1cd0303963629f317a08e7e52162ccca7232ae7f/library/core/src/tuple.rs
+fn=std::sys::unix::time::Timespec::sub_timespec
+58 18 0 0 0 0 0 0 0 0
+fl=???
+fn=(below main)
+0 57 5 5 16 1 0 18 0 0
+fn=???
+0 431 59 58 281 31 13 24 1 1
+fn=_Exit
+0 8 2 2 1 0 0 0 0 0
+fn=_IO_cleanup
+0 94 6 6 31 0 0 17 0 0
+fn=_IO_default_finish
+0 15 2 2 6 0 0 1 0 0
+fn=_IO_doallocbuf
+0 25 3 3 8 1 0 4 0 0
+fn=_IO_file_close
+0 2 1 1 1 0 0 0 0 0
+fn=_IO_file_close_it@@GLIBC_2.2.5
+0 54 6 6 10 0 0 16 0 0
+fn=_IO_file_doallocate
+0 45 4 4 9 0 0 6 0 0
+fn=_IO_file_finish@@GLIBC_2.2.5
+0 12 2 2 3 0 0 2 0 0
+fn=_IO_file_fopen@@GLIBC_2.2.5
+0 80 8 8 14 1 1 8 0 0
+fn=_IO_file_open
+0 33 4 4 6 0 0 7 0 0
+fn=_IO_file_read
+0 35 1 1 14 0 0 0 0 0
+fn=_IO_file_stat
+0 4 1 1 1 0 0 0 0 0
+fn=_IO_file_underflow@@GLIBC_2.2.5
+0 420 7 7 135 1 1 99 0 0
+fn=_IO_flush_all_lockp
+0 116 9 9 35 13 13 19 0 0
+fn=_IO_link_in
+0 93 9 9 34 3 0 17 0 0
+fn=_IO_new_file_init_internal
+0 13 2 2 4 0 0 5 0 0
+fn=_IO_no_init
+0 1177 4 4 265 0 0 436 2 2
+fn=_IO_old_init
+0 1327 3 3 159 1 1 850 2 2
+fn=_IO_setb
+0 983 2 2 220 0 0 220 0 0
+fn=_IO_sputbackc
+0 3744 3 3 1456 0 0 624 0 0
+fn=_IO_str_init_static_internal
+0 1820 4 4 260 0 0 676 0 0
+fn=_IO_switch_to_get_mode
+0 168 3 3 56 0 0 49 0 0
+fn=_IO_un_link
+0 6 0 0 3 0 0 0 0 0
+fn=_IO_unsave_markers
+0 5 1 1 3 0 0 0 0 0
+fn=__GI__IO_un_link.part.1
+0 67 8 8 20 0 0 13 0 0
+fn=__GI___close_nocancel
+0 25 1 1 5 0 0 0 0 0
+fn=__GI___tunables_init
+0 34332 6 6 6992 61 61 6 1 1
+fn=__GI_strstr
+0 27 2 2 8 1 1 7 0 0
+fn=____strtoul_l_internal
+0 25650 12 12 3014 5 4 1144 1 0
+fn=__bsd_signal.part.1
+0 27 1 1 3 1 1 4 2 0
+fn=__call_tls_dtors
+0 26 2 2 13 5 5 5 0 0
+fn=__close_nocancel
+0 5 1 1 1 0 0 0 0 0
+fn=__cpu_indicator_init@GCC_4.8.0
+0 60 6 6 6 2 1 5 0 0
+fn=__ctype_init
+0 16 2 2 10 6 0 3 0 0
+fn=__cxa_atexit
+0 2 1 1 0 0 0 0 0 0
+fn=__cxa_finalize
+0 290 6 6 85 1 1 35 0 0
+fn=__cxa_thread_atexit_impl
+0 44 4 4 15 2 0 14 0 0
+fn=__default_morecore
+0 14 1 1 2 0 0 2 0 0
+fn=__fopen_internal
+0 42 4 4 7 1 0 11 1 1
+fn=__init_misc
+0 24 2 2 7 0 0 5 1 0
+fn=__internal_atexit
+0 38 3 3 10 1 1 9 0 0
+fn=__isoc99_sscanf
+0 2236 5 5 208 0 0 832 0 0
+fn=__libc_csu_init
+0 40 2 2 9 1 0 9 0 0
+fn=__libc_early_init
+0 7 2 2 3 0 0 3 1 1
+fn=__libc_pthread_init
+0 225 2 2 62 5 0 34 6 6
+fn=__libc_scratch_buffer_set_array_size
+0 85 3 3 25 0 0 15 0 0
+fn=__libc_sigaction
+0 341 15 13 90 0 0 88 4 3
+fn=__memchr_avx2
+0 2759 10 10 373 15 15 0 0 0
+fn=__memcpy_avx_unaligned_erms
+0 1360 6 6 446 1 1 344 2 2
+fn=__memset_avx2_erms
+0 67108887 1 1 1 1 1 67108880 1048577 1048577
+fn=__memset_avx2_unaligned_erms
+0 53 4 4 4 0 0 8 2 2
+fn=__new_exitfn
+0 29 4 4 8 3 0 5 0 0
+fn=__open_nocancel
+0 457 5 5 25 0 0 44 2 2
+fn=__pthread_attr_extension
+0 13 2 2 3 0 0 3 0 0
+fn=__pthread_initialize_minimal
+0 133 13 13 21 5 0 40 7 3
+fn=__pthread_mutex_unlock_usercnt
+0 420 3 3 128 2 0 18 0 0
+fn=__pthread_tunables_init
+0 7 1 1 1 0 0 1 0 0
+fn=__rawmemchr_avx2
+0 2448 4 4 423 1 1 0 0 0
+fn=__read_nocancel
+0 60 2 2 12 0 0 0 0 0
+fn=__register_atfork
+0 43 4 4 10 1 1 11 1 1
+fn=__rtld_malloc_init_real
+0 117 4 4 11 1 1 17 1 0
+fn=__rtld_malloc_init_stubs
+0 9 2 2 1 0 0 4 0 0
+fn=__run_exit_handlers
+0 101 9 9 25 4 4 15 2 2
+fn=__sigjmp_save
+0 8 0 0 2 0 0 2 0 0
+fn=__sigsetjmp
+0 227 5 5 59 0 0 96 2 2
+fn=__strchr_avx2
+0 25 3 3 3 0 0 0 0 0
+fn=__strrchr_avx2
+0 51 5 5 3 2 0 0 0 0
+fn=__strtoul_internal
+0 312 1 1 208 0 0 0 0 0
+fn=__tunable_get_val
+0 562 3 3 108 26 0 27 0 0
+fn=__underflow
+0 237 4 4 77 1 0 15 0 0
+fn=__unregister_atfork
+0 125 2 2 45 2 2 5 0 0
+fn=__vfscanf_internal
+0 57512 43 43 15620 12 7 7080 7 0
+fn=_dl_add_to_namespace_list
+0 244 2 2 68 1 1 47 0 0
+fn=_dl_add_to_slotinfo
+0 54 3 3 18 5 0 12 1 0
+fn=_dl_addr
+0 72472 11 11 14496 1104 750 17 1 0
+fn=_dl_addr_inside_object
+0 67 3 3 19 8 0 0 0 0
+fn=_dl_allocate_tls_init
+0 130 7 7 38 5 0 19 0 0
+fn=_dl_allocate_tls_storage
+0 352 4 4 9 0 0 321 41 41
+fn=_dl_call_libc_early_init
+0 23 2 2 5 0 0 3 0 0
+fn=_dl_catch_error
+0 22 2 2 7 0 0 7 0 0
+fn=_dl_catch_exception
+0 374 3 3 88 0 0 143 4 4
+fn=_dl_check_all_versions
+0 110 3 3 19 0 0 11 0 0
+fn=_dl_check_map_versions
+0 6987 17 17 2405 58 51 608 43 41
+fn=_dl_count_modids
+0 4 1 1 3 0 0 0 0 0
+fn=_dl_debug_initialize
+0 65 5 3 22 0 0 4 0 0
+fn=_dl_debug_state
+0 2 0 0 2 0 0 0 0 0
+fn=_dl_determine_tlsoffset
+0 104 6 6 19 1 1 9 0 0
+fn=_dl_discover_osversion
+0 81 5 5 12 1 1 4 1 1
+fn=_dl_dst_count
+0 204 1 1 72 0 0 72 3 3
+fn=_dl_find_dso_for_object
+0 98 6 4 37 7 0 9 0 0
+fn=_dl_fini
+0 425 11 11 131 52 52 45 7 7
+fn=_dl_get_tls_static_info
+0 5 0 0 3 0 0 2 1 1
+fn=_dl_important_hwcaps
+0 568 18 18 78 0 0 78 5 5
+fn=_dl_init
+0 98 5 5 25 2 0 15 0 0
+fn=_dl_init_paths
+0 315 12 12 43 0 0 35 3 3
+fn=_dl_load_cache_lookup
+0 107 5 5 36 0 0 26 1 1
+fn=_dl_lookup_direct
+0 61 3 3 16 2 0 9 0 0
+fn=_dl_lookup_symbol_x
+0 68166 10 10 14193 203 176 7327 4 0
+fn=_dl_map_object
+0 2154 25 25 458 0 0 298 8 8
+fn=_dl_map_object_deps
+0 2293 32 32 451 3 2 208 11 11
+fn=_dl_map_object_from_fd
+0 5679 55 55 1330 55 55 623 50 50
+fn=_dl_name_match_p
+0 2872 2 2 740 0 0 430 1 1
+fn=_dl_new_object
+0 1213 15 15 229 7 7 231 42 42
+fn=_dl_next_ld_env_entry
+0 476 2 2 164 0 0 2 0 0
+fn=_dl_next_tls_modid
+0 6 1 1 3 0 0 1 0 0
+fn=_dl_protect_relro
+0 147 2 2 42 1 0 14 0 0
+fn=_dl_receive_error
+0 15 1 1 5 0 0 7 0 0
+fn=_dl_relocate_object
+0 58739 51 51 14589 1121 1005 5435 429 408
+fn=_dl_setup_hash
+0 161 3 3 49 8 8 42 1 1
+fn=_dl_sort_maps
+0 1195 17 17 305 6 6 66 0 0
+fn=_dl_start
+0 985 20 19 248 36 34 89 42 42
+fn=_dl_sysdep_read_whole_file
+0 20 2 2 5 0 0 5 0 0
+fn=_dl_sysdep_start
+0 696 31 30 170 23 21 81 5 5
+fn=_dl_sysdep_start_cleanup
+0 1 1 1 1 0 0 0 0 0
+fn=_dl_tls_static_surplus_init
+0 34 2 2 6 0 0 7 0 0
+fn=_dl_unload_cache
+0 5 1 1 2 1 0 0 0 0
+fn=_fxstat
+0 60 3 3 6 0 0 0 0 0
+fn=_init_first
+0 20 3 3 7 2 0 5 3 3
+fn=_int_free
+0 570 6 6 150 3 3 100 0 0
+fn=_int_malloc
+0 1906 24 24 305 2 0 349 11 8
+fn=_int_realloc
+0 119 8 8 24 0 0 17 0 0
+fn=_pthread_cleanup_pop_restore
+0 504 3 3 224 0 0 56 0 0
+fn=_pthread_cleanup_push_defer
+0 896 2 2 224 2 1 280 0 0
+fn=_setjmp
+0 2 1 1 0 0 0 0 0 0
+fn=_xstat
+0 192 1 1 15 0 0 14 0 0
+fn=access
+0 8 0 0 1 0 0 1 0 0
+fn=alloc::raw_vec::finish_grow
+0 40 3 3 10 0 0 11 0 0
+fn=bcmp
+0 26 2 2 10 4 0 0 0 0
+fn=brk
+0 29 3 3 5 0 0 3 1 1
+fn=call_init
+0 415 5 5 142 29 0 61 0 0
+fn=calloc
+0 158 8 8 32 0 0 16 0 0
+fn=check_free
+0 4 2 2 2 1 1 0 0 0
+fn=check_match
+0 18007 9 9 6140 352 190 2130 2 0
+fn=check_stdfiles_vtables
+0 11 1 1 7 4 0 0 0 0
+fn=clock_gettime@@GLIBC_2.17
+0 80 2 2 20 5 4 8 0 0
+fn=dl_main
+0 1579 82 82 349 48 24 163 19 18
+fn=do_lookup_x
+0 117236 16 16 38369 524 260 17150 4 4
+fn=do_preload
+0 28 2 2 7 0 0 8 0 0
+fn=dso_name_valid_for_suid
+0 14 2 2 5 0 0 2 0 0
+fn=elision_init
+0 30 3 3 3 0 0 7 0 0
+fn=exit
+0 5 1 1 0 0 0 1 0 0
+fn=expand_dynamic_string_token
+0 36 2 2 10 0 0 12 0 0
+fn=fclose@@GLIBC_2.2.5
+0 56 8 8 16 1 0 7 0 0
+fn=fillin_rpath
+0 149 11 11 29 0 0 38 0 0
+fn=fini
+0 2 1 1 0 0 0 0 0 0
+fn=fopen@@GLIBC_2.2.5
+0 2 1 1 0 0 0 0 0 0
+fn=free
+0 221 3 3 60 6 6 10 0 0
+fn=get_available_features
+0 106 8 8 3 0 0 2 0 0
+fn=get_common_cache_info
+0 222 11 11 21 0 0 15 0 0
+fn=get_common_indices.constprop.1
+0 55 4 4 5 0 0 21 3 3
+fn=getdelim
+0 4252 10 10 1144 0 0 656 0 0
+fn=getline
+0 156 1 1 0 0 0 0 0 0
+fn=getpagesize
+0 35 1 1 21 0 0 0 0 0
+fn=getrlimit
+0 30 2 2 2 0 0 0 0 0
+fn=handle_intel.constprop.1
+0 159 6 6 27 0 0 42 0 0
+fn=handle_preload_list
+0 50 3 3 10 0 0 11 1 1
+fn=index
+0 612 10 10 86 6 6 0 0 0
+fn=init
+0 3 1 1 1 0 0 2 1 0
+fn=init_cacheinfo
+0 93 8 8 18 2 0 24 2 2
+fn=init_tls
+0 101 4 4 24 4 1 16 0 0
+fn=intel_check_word.isra.0
+0 1324 10 10 111 6 6 24 0 0
+fn=lookup_malloc_symbol
+0 180 3 3 64 2 0 40 0 0
+fn=main
+0 236 24 24 54 10 5 78 9 5
+fn=malloc
+0 388 6 6 104 3 0 36 0 0
+fn=malloc_hook_ini
+0 11 2 2 3 1 1 3 0 0
+fn=malloc_init_state
+0 647 2 2 1 0 0 257 35 34
+fn=map_doit
+0 14 1 1 5 0 0 3 1 1
+fn=memchr
+0 22 1 1 8 0 0 0 0 0
+fn=memcpy
+0 1101 4 4 333 4 3 243 28 28
+fn=memcpy@@GLIBC_2.14
+0 68 3 3 16 0 0 0 0 0
+fn=memmove
+0 51 3 3 12 2 0 0 0 0
+fn=mempcpy
+0 229 3 3 8 0 0 0 0 0
+fn=memrchr
+0 11 2 2 4 0 0 0 0 0
+fn=memset
+0 1250 8 8 35 0 0 550 128 128
+fn=mmap
+0 910 6 6 182 0 0 156 5 4
+fn=mprotect
+0 50 1 1 10 0 0 0 0 0
+fn=munmap
+0 10 1 1 2 0 0 0 0 0
+fn=munmap_chunk
+0 33 3 3 10 2 2 0 0 0
+fn=open_path
+0 1998 15 15 625 1 1 298 3 3
+fn=open_verify.constprop.12
+0 1566 15 15 395 20 20 214 2 2
+fn=openaux
+0 170 1 1 80 0 0 30 0 0
+fn=poll
+0 8 1 1 2 0 0 0 0 0
+fn=pthread_attr_destroy
+0 12 1 1 5 0 0 3 0 0
+fn=pthread_attr_getstack
+0 7 2 2 3 0 0 2 0 0
+fn=pthread_attr_init@@GLIBC_2.2.5
+0 13 2 2 2 0 0 7 0 0
+fn=pthread_attr_setaffinity_np@@GLIBC_2.32
+0 38 2 2 9 0 0 9 0 0
+fn=pthread_getaffinity_np@@GLIBC_2.32
+0 20 1 1 2 0 0 1 0 0
+fn=pthread_getattr_np@@GLIBC_2.32
+0 1440 15 15 342 3 0 186 2 0
+fn=pthread_mutex_init
+0 40 4 4 7 0 0 8 1 1
+fn=pthread_mutex_lock
+0 552 5 5 172 8 6 59 0 0
+fn=pthread_mutex_unlock
+0 36 1 1 0 0 0 0 0 0
+fn=pthread_mutexattr_destroy
+0 2 1 1 1 0 0 0 0 0
+fn=pthread_mutexattr_init
+0 3 1 1 1 0 0 1 0 0
+fn=pthread_mutexattr_settype
+0 12 2 2 2 0 0 1 0 0
+fn=pthread_self
+0 2 1 1 2 0 0 0 0 0
+fn=ptmalloc_init.part.0
+0 77 7 7 8 5 1 18 2 0
+fn=rawmemchr
+0 11 2 2 4 0 0 0 0 0
+fn=realloc
+0 226 8 8 53 0 0 32 0 0
+fn=realloc_hook_ini
+0 18 2 2 5 0 0 4 0 0
+fn=rindex
+0 11 1 1 4 0 0 0 0 0
+fn=rtld_calloc
+0 112 1 1 14 0 0 0 0 0
+fn=rtld_free
+0 24 0 0 12 0 0 0 0 0
+fn=rtld_lock_default_lock_recursive
+0 12 1 1 12 1 1 0 0 0
+fn=rtld_lock_default_unlock_recursive
+0 12 0 0 12 0 0 0 0 0
+fn=rtld_malloc
+0 726 5 5 119 0 0 120 0 0
+fn=sbrk
+0 66 5 5 19 4 2 10 1 0
+fn=sigaction
+0 35 3 3 0 0 0 0 0 0
+fn=sigaltstack
+0 15 1 1 3 0 0 0 0 0
+fn=signal
+0 9 2 2 0 0 0 0 0 0
+fn=stpcpy
+0 10 2 2 4 0 0 0 0 0
+fn=stpncpy
+0 10 1 1 4 0 0 0 0 0
+fn=strcasecmp
+0 6 2 2 3 1 0 0 0 0
+fn=strcasecmp_l
+0 6 2 2 3 0 0 0 0 0
+fn=strcat
+0 10 2 2 4 0 0 0 0 0
+fn=strchrnul
+0 11 1 1 4 0 0 0 0 0
+fn=strcmp
+0 33921 74 73 5997 242 138 0 0 0
+fn=strcpy
+0 20 1 1 8 0 0 0 0 0
+fn=strcspn
+0 402 5 5 213 4 4 34 4 4
+fn=strdup
+0 42 1 1 8 0 0 10 0 0
+fn=strlen
+0 736 8 8 146 3 2 0 0 0
+fn=strncasecmp
+0 6 1 1 3 0 0 0 0 0
+fn=strncasecmp_l
+0 6 1 1 3 0 0 0 0 0
+fn=strncmp
+0 10 2 2 4 0 0 0 0 0
+fn=strncpy
+0 10 2 2 4 0 0 0 0 0
+fn=strnlen
+0 22 1 1 8 0 0 0 0 0
+fn=strpbrk
+0 6 1 1 3 0 0 0 0 0
+fn=strsep
+0 440 3 3 73 1 1 1 0 0
+fn=strspn
+0 6 2 2 3 0 0 0 0 0
+fn=sysconf
+0 186 4 4 36 3 2 30 0 0
+fn=sysmalloc
+0 210 22 20 53 4 2 34 6 3
+fn=tcache_init.part.6
+0 114 3 3 9 1 0 84 9 9
+fn=uname
+0 5 1 1 1 0 0 0 0 0
+fn=update_usable.constprop.2
+0 126 12 12 34 0 0 24 2 2
+fn=version_check_doit
+0 10 2 2 4 0 0 2 0 0
+fn=wcschr
+0 22 1 1 8 0 0 0 0 0
+fn=wcscmp
+0 11 1 1 4 0 0 0 0 0
+fn=wcscpy
+0 6 1 1 3 0 0 0 0 0
+fn=wcslen
+0 11 1 1 4 0 0 0 0 0
+fn=wcsnlen
+0 10 2 2 4 0 0 0 0 0
+fn=wmemchr
+0 22 1 1 8 0 0 0 0 0
+fn=wmemcmp
+0 13 2 2 5 0 0 0 0 0
+fn=wmemset
+0 28 2 2 8 0 0 0 0 0
+fn=write
+0 200 2 2 50 2 2 0 0 0
+summary: 5217682798 1599 1587 500140374 150004322 102809403 217163365 51049655 37540472
